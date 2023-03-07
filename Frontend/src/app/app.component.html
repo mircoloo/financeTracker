@@ -1,2 +1,17 @@
-<app-side-menu></app-side-menu>
-<app-content></app-content>
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button mat-icon-button>
+            <!-- <mat-icon (click)="sidenav.toggle">menu</mat-icon> -->
+        </button>
+        Financial Tracker
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav>
+        side
+    </mat-sidenav>
+    <mat-sidenav-content *ngIf="1">
+        CONT
+    </mat-sidenav-content>
+</mat-sidenav-container>
