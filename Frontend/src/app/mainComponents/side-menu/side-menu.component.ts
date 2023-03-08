@@ -6,11 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./side-menu.component.css']
 })
 export class SideMenuComponent {
-  opened: boolean = false;
-
-  toogleMenu(): void {
-    this.opened = !this.opened;
-  }
+  public opened: boolean = false;
 
 
 }
