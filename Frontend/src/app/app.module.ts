@@ -17,6 +17,9 @@ import {MatListModule} from '@angular/material/list';
 import { DegiroComponent } from './pagesComponents/degiro/degiro.component';
 import { BondoraComponent } from './pagesComponents/bondora/bondora.component';
 import {MatInputModule} from '@angular/material/input';
+import { HomeComponent } from './pagesComponents/home/home.component';
+import {MatCardModule} from '@angular/material/card';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,8 @@ import {MatInputModule} from '@angular/material/input';
     ContentComponent,
     ButtonComponent,
     DegiroComponent,
-    BondoraComponent
+    BondoraComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,9 @@ import {MatInputModule} from '@angular/material/input';
     MatIconModule,
     MatDividerModule,
     MatListModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

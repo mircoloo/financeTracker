@@ -8,10 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'financeTracker';
   public opened: boolean = true
+  testo: string = "";
 
 
   onInput(e: Event){
     console.log((<HTMLInputElement>e.target).value)
+    this.testo = (<HTMLInputElement>e.target).value
   }
 
 
