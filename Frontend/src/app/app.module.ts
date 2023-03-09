@@ -16,6 +16,7 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import { DegiroComponent } from './pagesComponents/degiro/degiro.component';
 import { BondoraComponent } from './pagesComponents/bondora/bondora.component';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { BondoraComponent } from './pagesComponents/bondora/bondora.component';
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

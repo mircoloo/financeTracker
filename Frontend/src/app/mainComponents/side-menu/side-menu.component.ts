@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-side-menu',
@@ -6,7 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./side-menu.component.css']
 })
 export class SideMenuComponent {
-  public opened: boolean = false;
-
+  @Input() open: boolean = false;
+  
+  ngOnInit(){
+    console.log(open)
+  }
 
 }

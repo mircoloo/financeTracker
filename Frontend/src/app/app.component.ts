@@ -7,8 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'financeTracker';
-  public opened: boolean = false
+  public opened: boolean = true
 
+
+  onInput(e: Event){
+    console.log((<HTMLInputElement>e.target).value)
+  }
 
 
 

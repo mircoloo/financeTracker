@@ -6,13 +6,17 @@
   </mat-toolbar-row>
 </mat-toolbar>
 <mat-sidenav-container>
-  <mat-sidenav [(opened)]="opened" mode="over"> <!-- mode= [over, push, side] -->
+  <mat-sidenav [(opened)]="opened" mode="push">  <!-- mode= [over, push, side] -->
     <mat-list>
-        <mat-list-item><mat-icon> attach_money</mat-icon><a routerLink="/degiro">Degiro</a></mat-list-item>
-        <mat-list-item><mat-icon> attach_money</mat-icon><a routerLink="/bondora">Bondora</a></mat-list-item>
+        <mat-list-item><button mat-button routerLink="/degiro" ><mat-icon> attach_money</mat-icon>Degiro</button></mat-list-item>
+        <mat-list-item><button mat-button routerLink="/bondora"><mat-icon> attach_money</mat-icon>Bondora</button></mat-list-item>
     </mat-list>
   </mat-sidenav>
   <mat-sidenav-content> 
     <app-content></app-content>
+   <mat-form-field class="example-full-width">
+    <mat-label>Leave a comment</mat-label>
+    <textarea matInput placeholder="Inserisci un commento" (input)="onInput($event)"></textarea>
+  </mat-form-field>
   </mat-sidenav-content>
 </mat-sidenav-container>

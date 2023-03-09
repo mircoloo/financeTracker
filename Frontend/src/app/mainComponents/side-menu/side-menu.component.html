@@ -1,6 +1,6 @@
-<mat-sidenav [(opened)]="opened" mode="push"> <!-- mode= [over, push, side] -->
-<mat-list>
-    <mat-list-item><button mat-button><mat-icon> attach_money</mat-icon><a routerLink="/degiro">Degiro</a></button></mat-list-item>
-    <mat-list-item><button mat-button><mat-icon> attach_money</mat-icon><a routerLink="/bondora">Bondora</a></button></mat-list-item>
- </mat-list>
-</mat-sidenav>
+<mat-sidenav opened="open" mode="over"> <!-- mode= [over, push, side] -->
+    <mat-list>
+        <mat-list-item><mat-icon> attach_money</mat-icon><a routerLink="/degiro">Degiro</a></mat-list-item>
+        <mat-list-item><mat-icon> attach_money</mat-icon><a routerLink="/bondora">Bondora</a></mat-list-item>
+    </mat-list>
+  </mat-sidenav>
