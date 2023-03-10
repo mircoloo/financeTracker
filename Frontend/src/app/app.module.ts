@@ -20,6 +20,7 @@ import {MatInputModule} from '@angular/material/input';
 import { HomeComponent } from './pagesComponents/home/home.component';
 import {MatCardModule} from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
+import { CardComponent } from './subComponents/card/card.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
     ButtonComponent,
     DegiroComponent,
     BondoraComponent,
-    HomeComponent
+    HomeComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
