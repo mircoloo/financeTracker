@@ -1,1 +1,9 @@
-<p>degiro works!</p>
+<h2 *ngIf="platform"> 
+    {{ platform.Name }} <br>
+    {{ platform.TotalValue }}€
+</h2>
+
+{{ platform | json }}
+
+<app-table [transactions]="transactions"></app-table>
+

@@ -21,6 +21,9 @@ import { HomeComponent } from './pagesComponents/home/home.component';
 import {MatCardModule} from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { CardComponent } from './subComponents/card/card.component';
+import { PlatformService } from './services/platform.service';
+import { TableComponent } from './subComponents/table/table.component';
+import {MatTableModule} from '@angular/material/table'; 
 
 @NgModule({
   declarations: [
@@ -31,7 +34,8 @@ import { CardComponent } from './subComponents/card/card.component';
     DegiroComponent,
     BondoraComponent,
     HomeComponent,
-    CardComponent
+    CardComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
@@ -45,9 +49,11 @@ import { CardComponent } from './subComponents/card/card.component';
     MatListModule,
     MatInputModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    MatTableModule
   ],
-  providers: [],
+  providers: [PlatformService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

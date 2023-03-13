@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'financeTracker';
-  public opened: boolean = true
+  public opened: boolean = false
   testo: string = "";
 
 

@@ -1,1 +1,4 @@
-<app-card></app-card>
+<div *ngFor="let plat of platforms">
+    <app-card [platform]="plat" ></app-card>
+</div>
+
