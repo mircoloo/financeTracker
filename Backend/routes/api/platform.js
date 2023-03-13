@@ -18,7 +18,7 @@ router.get("/:platformID", (req, res) => {
     SQL = "SELECT * FROM platform WHERE ID = ?"
     con.query(SQL, platformID, function (err, result) {
         if (err) throw err;
-        res.status(200).json(result)  
+        res.status(200).json(result[0])  
       });     
 })
 
@@ -68,7 +68,7 @@ router.get("/:platformID/transaction/:transactionID", (req, res) => {
     SQL = "SELECT * FROM transaction WHERE Platform_ID = ? AND ID = ?"
     con.query(SQL, [platformID,transactionID], function (err,   result) {
         if (err) throw err;
-        res.status(200).json(result)  
+        res.status(200).json(result[0])  
       })
 })
 

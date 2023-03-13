@@ -19,15 +19,19 @@ export class DegiroComponent implements OnInit {
   }
   ngOnInit(): void {
 
-    
-
-          this.platformService.getPlatform(1)
-      .subscribe( (data: IPlatform) => 
+  this.platformService.getPlatform(1)
+      .subscribe( 
+        platform => 
           {
-           
-            this.platform = data
+            this.platform = platform
             console.log("Platform",this.platform) 
-          })
+          },
+          error => {
+            console.log(error);
+          }
+        )
+
+
 
     
      
