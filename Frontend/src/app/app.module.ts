@@ -24,6 +24,12 @@ import { CardComponent } from './subComponents/card/card.component';
 import { PlatformService } from './services/platform.service';
 import { TableComponent } from './subComponents/table/table.component';
 import {MatTableModule} from '@angular/material/table'; 
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { MatBadgeModule } from '@angular/material/badge';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { AddTransactionComponent } from './subComponents/add-transaction/add-transaction.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +41,8 @@ import {MatTableModule} from '@angular/material/table';
     BondoraComponent,
     HomeComponent,
     CardComponent,
-    TableComponent
+    TableComponent,
+    AddTransactionComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +58,13 @@ import {MatTableModule} from '@angular/material/table';
     MatCardModule,
     HttpClientModule,
     FormsModule,
-    MatTableModule
+    MatTableModule,
+    MatButtonToggleModule,
+    MatBadgeModule,
+    MatProgressSpinnerModule,
+    MatMenuModule,
+    MatGridListModule
+
   ],
   providers: [PlatformService],
   bootstrap: [AppComponent]

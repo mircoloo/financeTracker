@@ -5,3 +5,10 @@ mat-sidenav-container{
 mat-sidenav{
   width: 200px;
 }
+
+mat-nav-list a{
+  display: flex;
+ justify-content: space-between;
+ background-color: aliceblue;
+ padding: 10px;
+}

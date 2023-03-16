@@ -11,4 +11,20 @@ export class TableComponent {
   @Input() transactions: ITransaction[] = []
   displayedColumns: string[] = ['ID', 'Platform_ID', 'Value', 'Date'];
 
+
+  timestampToDate(timestamp: string){
+      
+      const date: Date= new Date(+timestamp);
+      if( +timestamp != 0 ){
+        return date.getDay() + "/" + date.getMonth() + "/" + date.getFullYear()
+      }
+      return ""
+      
+    
+
+    
+    
+
+  }
+
 }

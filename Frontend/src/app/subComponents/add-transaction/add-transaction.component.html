@@ -1,0 +1,5 @@
+<mat-form-field floatLabel="always" appearance="outline">
+    <mat-label>Value</mat-label>
+    <input matInput [(ngModel)]="transactionValue"  [ngStyle]="{'background': isValidInput ? '' : ''}" (input)="onInput($event)">
+  </mat-form-field> 
+  <button mat-icon-button (click)="onClick()">+</button>

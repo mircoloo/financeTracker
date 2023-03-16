@@ -9,6 +9,7 @@ export class AppComponent {
   title = 'financeTracker';
   public opened: boolean = false
   testo: string = "";
+  
 
 
   onInput(e: Event){

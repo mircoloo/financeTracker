@@ -1,25 +1,18 @@
 
-<mat-card class="example-card">
+  <mat-card class="card" >
     <mat-card-header>
-      <mat-card-title> {{ platform.Name }} </mat-card-title>
+      <mat-card-title > {{ platform.Name }}  </mat-card-title>
+      <!-- <button mat-icon-button><mat-icon>open_in_new</mat-icon></button> -->
     </mat-card-header>
+
     <mat-card-content>
-      <p> {{ platform.TotalValue }}€ </p>
+      <h1> <b>{{ platform.TotalValue }}€ </b></h1>
       <mat-divider></mat-divider>
     </mat-card-content>
     
     <mat-card-actions>
-      
-      <button mat-button value="add" (click)="onClick($event)"    [ngStyle]="{'background-color': 0 ? 'lightblue' : 'green'}" >+</button>
-      <button mat-button value="substract" (click)="onClick($event)"  [ngStyle]="{'background-color': 'red'}" >-</button>
-
-      <mat-form-field *ngIf="showInput">
-        
-        
-        <mat-label>Inserisci valore transazione</mat-label>
-        <textarea matInput [ngStyle]="{'background': isValidInput ? 'green' : 'red'}"  [(ngModel)]="transValue" (input)="onInput($event)"></textarea>
-        
-      </mat-form-field>
-      
+      <app-add-transaction [platformID]="platform.ID" ></app-add-transaction>
     </mat-card-actions>
+    
+    
   </mat-card>

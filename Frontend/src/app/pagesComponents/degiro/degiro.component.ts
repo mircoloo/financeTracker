@@ -11,8 +11,9 @@ import { TransactionService } from 'src/app/services/transaction.service';
 })
 export class DegiroComponent implements OnInit {
 
-  public transactions: ITransaction[] = [];
-  public platform: IPlatform = {ID: -1, Name: "", TotalValue: 0}
+  public transactions!: ITransaction[];
+  public platform!: IPlatform;
+  public showSpinner: boolean = false
 
   constructor(private transactionService: TransactionService, private platformService: PlatformService){
 
@@ -20,25 +21,19 @@ export class DegiroComponent implements OnInit {
   ngOnInit(): void {
 
   this.platformService.getPlatform(1)
-      .subscribe( 
-        platform => 
+      .subscribe(  (platform) => 
           {
+        
             this.platform = platform
             console.log("Platform",this.platform) 
           },
           error => {
             console.log(error);
           }
-        )
-
-
-
-    
-     
+        )  
 
     this.transactionService.getTransactions(1)
       .subscribe( (data) => {this.transactions = data; console.log(this.transactions) }) 
-
   }
 
 

@@ -1,1 +1,41 @@
-<button>{{ name }}</button>
+<div>
+    <button color="warn" disableRipple="false" mat-icon-button>+</button>
+    <mat-button-toggle-group #toggleGroup="matButtonToggleGroup" multiple>
+        <mat-button-toggle value="angular" [disabled]="false">Angular</mat-button-toggle>
+        <mat-button-toggle value="react" [disabled]="false">React</mat-button-toggle>
+        <mat-button-toggle value="vue" [disabled]="false">Vue</mat-button-toggle>
+        
+
+    </mat-button-toggle-group>
+    {{ toggleGroup.value }}
+    
+</div>
+
+<span matBadge="6">Notification</span>
+<span matBadge="5" matBadgePosition="below after" matBadgeSize="large">Notification</span>
+<span matBadge="7"matBadgeOverlap="true">Notification</span>
+<mat-progress-spinner value="98"></mat-progress-spinner>
+<mat-spinner></mat-spinner>
+
+<mat-menu #appMenu="matMenu">
+    <button mat-menu-item [mat-menu-trigger-for]="subMenu" >Frontend</button>
+    <button mat-menu-item>Backend</button>
+</mat-menu>
+
+<button mat-flat-button [matMenuTriggerFor]="appMenu">Menu</button>
+
+
+<mat-menu #subMenu="matMenu">
+    <button mat-menu-item>Angualar</button>
+    <button mat-menu-item>React</button>
+    <button mat-menu-item>Vue</button>
+</mat-menu>
+
+<mat-grid-list cols="2" rowHeight="2:1" gutterSize="10px"> 
+    <mat-grid-tile ><app-card></app-card></mat-grid-tile>
+    <mat-grid-tile ><app-card></app-card></mat-grid-tile>
+    <mat-grid-tile ><app-card></app-card></mat-grid-tile>
+    <mat-grid-tile >Title 2</mat-grid-tile>
+    <mat-grid-tile>Title 3</mat-grid-tile>
+    <mat-grid-tile>Title 4</mat-grid-tile>
+</mat-grid-list>
