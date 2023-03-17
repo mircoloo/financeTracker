@@ -1,5 +1,18 @@
+
 <mat-form-field floatLabel="always" appearance="outline">
+  <div  *ngIf="!isValidInput"  matBadge="!" matBadgeColor="warn"></div>
     <mat-label>Value</mat-label>
-    <input matInput [(ngModel)]="transactionValue"  [ngStyle]="{'background': isValidInput ? '' : ''}" (input)="onInput($event)">
+    
+    <input matInput   [(ngModel)]="transactionValue"  [ngStyle]="{'background': isValidInput ? '' : ''}" (input)="onInput($event)">
+    
+  
   </mat-form-field> 
-  <button mat-icon-button (click)="onClick()">+</button>
+
+  <mat-form-field floatLabel="always" appearance="outline">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="datePicker" [(ngModel)]="transactionDate">
+    <mat-datepicker-toggle matIconSuffix [for]="datePicker"></mat-datepicker-toggle>
+    <mat-datepicker #datePicker></mat-datepicker>
+    </mat-form-field> 
+  
+  <button mat-icon-button (click)="onClick()" >+</button>

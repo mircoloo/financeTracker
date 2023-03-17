@@ -30,6 +30,10 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { AddTransactionComponent } from './subComponents/add-transaction/add-transaction.component';
+import { ChartComponent } from './subComponents/chart/chart.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -42,7 +46,8 @@ import { AddTransactionComponent } from './subComponents/add-transaction/add-tra
     HomeComponent,
     CardComponent,
     TableComponent,
-    AddTransactionComponent
+    AddTransactionComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
@@ -63,8 +68,10 @@ import { AddTransactionComponent } from './subComponents/add-transaction/add-tra
     MatBadgeModule,
     MatProgressSpinnerModule,
     MatMenuModule,
-    MatGridListModule
-
+    MatGridListModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSnackBarModule
   ],
   providers: [PlatformService],
   bootstrap: [AppComponent]

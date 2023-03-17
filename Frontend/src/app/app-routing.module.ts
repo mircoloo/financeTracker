@@ -11,11 +11,11 @@ const routes: Routes = [
   },
   
   {
-    path: "degiro", 
+    path: "1", 
     component: DegiroComponent
   },
   {
-    path: "bondora", 
+    path: "2", 
     component: BondoraComponent
   },
 

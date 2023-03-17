@@ -1,2 +1,9 @@
 <router-outlet></router-outlet>
+<h2 class="mat-display-1" *ngIf="platform"> 
+    {{ platform.Name }} <br>
+    {{ platform.TotalValue }}€
+</h2>
+<app-table [transactions]="transactions"></app-table>
+<app-chart *ngIf="transactions" [platformID]="platform.ID"  [transactions]="transactions"></app-chart>
+
 

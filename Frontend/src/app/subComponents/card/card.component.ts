@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { IPlatform } from 'src/app/Platform';
 
 @Component({
@@ -6,7 +6,8 @@ import { IPlatform } from 'src/app/Platform';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css']
 })
-export class CardComponent {
+export class CardComponent implements OnChanges {
+  
 
   @Input() platform!: IPlatform;
   showInput: boolean = true
@@ -16,6 +17,11 @@ export class CardComponent {
    
 
   }
+  
+  ngOnChanges(changes: SimpleChanges): void {
+    
+  }
+
 
   
 

@@ -1,5 +1,7 @@
 <mat-toolbar color="primary">
+  
   <mat-toolbar-row>
+    <!-- <h1>{{ title }}</h1> -->
     <button mat-button mat-button (click)="opened=!opened">
       <mat-icon>menu</mat-icon>
     </button> 
@@ -20,8 +22,7 @@
       <a mat-list-item routerLink="/" ><mat-icon>home</mat-icon>Home</a>
       <a [matMenuTriggerFor]="appMenu" mat-list-item><mat-icon>view_module</mat-icon>Platforms</a>
       <mat-menu #appMenu="matMenu">
-        <a  mat-list-item routerLink="/degiro">Degiro</a>
-        <a mat-list-item routerLink="/bondora">Bondora</a>
+        <a mat-list-item routerLink="{{plat.ID}}" *ngFor="let plat of platforms">{{plat.Name}}</a>
       </mat-menu>
       <a mat-list-item routerLink="/heritage"><mat-icon> attach_money</mat-icon>Heritage</a>
     </mat-nav-list>

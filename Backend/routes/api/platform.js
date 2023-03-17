@@ -24,7 +24,7 @@ router.get("/:platformID", (req, res) => {
 
 router.get("/:platformID/transaction", (req, res) => {
   let { platformID } = req.params
-    SQL = "SELECT * FROM transaction WHERE Platform_ID = ?"
+    SQL = "SELECT * FROM transaction WHERE Platform_ID = ? ORDER BY Date ASC"
     con.query(SQL, [platformID],function (err, result) {
         if (err) throw err;
         res.status(200).json(result)  

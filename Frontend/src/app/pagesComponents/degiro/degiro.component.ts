@@ -25,7 +25,7 @@ export class DegiroComponent implements OnInit {
           {
         
             this.platform = platform
-            console.log("Platform",this.platform) 
+            
           },
           error => {
             console.log(error);
