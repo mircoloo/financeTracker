@@ -1,6 +1,6 @@
 export interface ITransaction{
     ID: number,
-    Platform_ID: number,
-    Value: number,
-    Date: string
+    platformID: number,
+    value: number,
+    date: string
 }

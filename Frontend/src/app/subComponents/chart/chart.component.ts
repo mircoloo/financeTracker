@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ITransaction } from 'src/app/Transaction';
 import { Chart, registerables } from 'chart.js';
+import { DateService } from 'src/app/services/date.service';
 
 Chart.register(...registerables)
 
@@ -12,6 +13,8 @@ Chart.register(...registerables)
 })
 export class ChartComponent implements OnInit{
   
+  constructor(private dateService: DateService){}
+
   @Input() transactions!: ITransaction[];
   @Input() platformID!: number;
    chart!: Chart;
@@ -28,10 +31,11 @@ export class ChartComponent implements OnInit{
 
     console.log("CHART TRANSACTIONS:" + this.transactions)
     this.transactions.map( (transaction) => { 
-      this.transactionsValue.push(transaction.Value)
-      this.currentTotalValue += transaction.Value; 
+      this.transactionsValue.push(transaction.value)
+      this.currentTotalValue += transaction.value; 
       this.yValues.push(this.currentTotalValue) 
-      this.dates.push(transaction.Date); 
+      //const date: Date = new Date(+transaction.Date);
+      this.dates.push(this.dateService.timestampToDate(transaction.date));
     } )
       
 

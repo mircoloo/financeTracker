@@ -6,7 +6,7 @@ let con = require('../../utils/db/db')
 
 router.get("/", (req, res) => {
   let { platformID } = req.params
-  SQL = "SELECT * FROM platform"
+  SQL = "SELECT * FROM platforms"
   con.query(SQL, function (err, result) {
       if (err) throw err;
       res.status(200).json(result)  
@@ -15,7 +15,7 @@ router.get("/", (req, res) => {
 
 router.get("/:platformID", (req, res) => {
     let { platformID } = req.params
-    SQL = "SELECT * FROM platform WHERE ID = ?"
+    SQL = "SELECT * FROM platforms WHERE ID = ?"
     con.query(SQL, platformID, function (err, result) {
         if (err) throw err;
         res.status(200).json(result[0])  
@@ -24,7 +24,7 @@ router.get("/:platformID", (req, res) => {
 
 router.get("/:platformID/transaction", (req, res) => {
   let { platformID } = req.params
-    SQL = "SELECT * FROM transaction WHERE Platform_ID = ? ORDER BY Date ASC"
+    SQL = "SELECT * FROM transactions WHERE platformID = ? ORDER BY date ASC"
     con.query(SQL, [platformID],function (err, result) {
         if (err) throw err;
         res.status(200).json(result)  
@@ -39,16 +39,16 @@ router.post("/:platformID/transaction", (req, res) => {
   var currPlatTotal = 0;
   //if( date = undefined ) { date = new Date().toISOString().slice(0, 19).replace('T', ' ');  }
     console.log(date)
-    SQL = "INSERT INTO transaction (Platform_ID, Value, Date) VALUES (? , ?, ?)"
+    SQL = "INSERT INTO transactions (platformID, value, date) VALUES (? , ?, ?)"
     con.query(SQL, [platformID, value, date], function(err, result1){
         if(err) throw err;
-        SQL = "SELECT * FROM Platform WHERE ID = ?"
+        SQL = "SELECT * FROM platforms WHERE ID = ?"
         con.query(SQL, [platformID], function(err, currentTotal){
             if(err) throw err;
             //console.log("PRE", currPlatTotal, currentTotal[0].TotalValue)
             currPlatTotal = currentTotal[0].TotalValue
             //console.log("POST", currPlatTotal, currentTotal[0].TotalValue)
-            SQL = "UPDATE platform SET TotalValue = ? WHERE ID = ?"
+            SQL = "UPDATE platforms SET TotalValue = ? WHERE ID = ?"
              console.log("Setto", value, currPlatTotal)
         con.query(SQL, [Number(value)+Number(currPlatTotal), platformID], function(err, result2){
             if(err) throw err;
@@ -62,7 +62,7 @@ router.post("/:platformID/transaction", (req, res) => {
     
 router.get("/:platformID/transaction/:transactionID", (req, res) => {
   let { platformID, transactionID } = req.params
-    SQL = "SELECT * FROM transaction WHERE Platform_ID = ? AND ID = ?"
+    SQL = "SELECT * FROM transactions WHERE platformID = ? AND ID = ?"
     con.query(SQL, [platformID,transactionID], function (err,   result) {
         if (err) throw err;
         res.status(200).json(result[0])  
